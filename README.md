@@ -4,6 +4,26 @@ Full Cycle - Docker challenges
 
 ## Challenge 1 - Container GO
 
+Inside the directory ./challenge-1 :
+
+Create container
+
+```
+docker build . -t huelbertrodrigo/full-cycle-docker-challenge-1:latest
+```
+
+Send container
+
+```
+docker push huelbertrodrigo/full-cycle-docker-challenge-1:latest
+```
+
+Execute container
+
+```
+docker run --rm huelbertrodrigo/full-cycle-docker-challenge-1:latest
+```
+
 ### Tips
 
 This challenge is very exciting especially if you have never worked with the Go language!
