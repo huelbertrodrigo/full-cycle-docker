@@ -1,9 +1,29 @@
 version: "3"
 
 services:
+  proxy:
+    build:
+      context: ./nginx
+    container_name: proxy
+    entrypoint:
+      [
+        "dockerize",
+        "-wait",
+        "tcp://app:3000",
+        "-timeout",
+        "10s",
+        "/docker-entrypoint.sh",
+      ]
+    command: ["nginx", "-g", "daemon off;"]
+    networks:
+      - node-network
+    ports:
+      - 8080:80
+    depends_on:
+      - app
   app:
     build:
-      context: node
+      context: ./node
     container_name: app
     entrypoint:
       [
@@ -11,7 +31,7 @@ services:
         "-wait",
         "tcp://db:3306",
         "-timeout",
-        "20s",
+        "10s",
         "node",
         "index.js",
       ]
@@ -20,8 +40,6 @@ services:
     tty: true
     volumes:
       - ./node:/app
-    ports:
-      - 3000:3000
     depends_on:
       - db
   db:
