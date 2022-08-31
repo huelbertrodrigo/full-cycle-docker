@@ -43,6 +43,14 @@ Tip: In the intro video about Docker when we talk about the layered file system,
 
 ## Challenge 2 - Nginx with Node.js
 
+First enter the ./challenge-2/node folder and run the command :
+
+Download node_modules
+
+```
+npm install
+```
+
 Inside the directory ./challenge-2 :
 
 Docker compose UP
