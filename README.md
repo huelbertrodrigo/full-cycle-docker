@@ -43,6 +43,20 @@ Tip: In the intro video about Docker when we talk about the layered file system,
 
 ## Challenge 2 - Nginx with Node.js
 
+Inside the directory ./challenge-2 :
+
+Docker compose UP
+
+```
+docker-compose up -d --build
+```
+
+Docker compose DOWN
+
+```
+docker-compose down
+```
+
 ### Tips
 
 In this challenge you will put into practice what we learned about using nginx as a reverse proxy. The main idea is that when a user accesses nginx, it will make a call in our node.js application. This application in turn will add a record in our mysql database, registering a name in the people table.
