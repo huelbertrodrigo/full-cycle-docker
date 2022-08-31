@@ -11,7 +11,7 @@ services:
         "-wait",
         "tcp://app:3000",
         "-timeout",
-        "10s",
+        "25s",
         "/docker-entrypoint.sh",
       ]
     command: ["nginx", "-g", "daemon off;"]
@@ -31,7 +31,7 @@ services:
         "-wait",
         "tcp://db:3306",
         "-timeout",
-        "10s",
+        "20s",
         "node",
         "index.js",
       ]
