@@ -3,7 +3,7 @@ version: "3"
 services:
   proxy:
     build:
-      context: ./nginx
+      context: nginx
     container_name: proxy
     entrypoint:
       [
@@ -23,7 +23,7 @@ services:
       - app
   app:
     build:
-      context: ./node
+      context: node
     container_name: app
     entrypoint:
       [
@@ -40,6 +40,7 @@ services:
     tty: true
     volumes:
       - ./node:/app
+      - /app/node_modules
     depends_on:
       - db
   db:
