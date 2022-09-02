@@ -1,6 +1,6 @@
-# full-cycle-docker-challenges
+# full-cycle-docker
 
-Full Cycle - Docker challenges
+Full Cycle - Docker
 
 ## Challenge 1 - Container GO
 
